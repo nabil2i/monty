@@ -64,6 +64,9 @@ void (*getfunc(char **str))(stack_t **stack, unsigned int line_number);
 
 /* opcode functions */
 void monty_push(stack_t **stack, unsigned int line_number);
+void monty_pall(stack_t **stack, unsigned int line_number);
 
+/* listoperations */
+size_t print_list(const stack_t *head);
 
 #endif
