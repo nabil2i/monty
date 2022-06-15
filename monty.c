@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
 
 /* Initialisation of global variables */
 char *lineptr = NULL;
