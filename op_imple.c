@@ -4,15 +4,15 @@
  * @stack: double pointer to stack to push to
  * @line_num: line number of the opcode in the file
  */
-void monty_push(stack_t **top, unsigned_int line_num)
+void monty_push(stack_t **top, unsigned int line_number)
 {
 
-	stack_t *new, *temp;
+	stack_t *new;
 	int i, number;
 
 	if (tokens[1] == NULL)
 	{
-		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -20,25 +20,23 @@ void monty_push(stack_t **top, unsigned_int line_num)
 	{
 		if (isalpha(tokens[1][i]) != 0)
 		{
-			dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
 
-	number = atoi(token[1][i]);
+	number = atoi(tokens[1]);
 
 	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit (EXIT_FAILURE);
 	}
 
 	new->n = number;
 	new->next = *top;
 	new->prev = NULL;
-
-	return (new);
 }
 
 /**
@@ -51,6 +49,7 @@ void monty_push(stack_t **top, unsigned_int line_num)
  */
 void monty_pall(stack_t **stack, unsigned int line_number)
 {
+	(void) line_number;
 	if (*stack != NULL)
 	{
 		print_list(*stack);

@@ -2,6 +2,9 @@
 #define MONTY_H
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -52,12 +55,16 @@ typedef struct args_s
 */
 
 extern char *lineptr;
-extern stack_t **montystack;
+extern stack_t *montystack;
 extern FILE *fptr;
-extern **tokens;
+extern char **tokens;
 
-/* monty.c */
-void montymain(args_t *arg)
+/* monty.c
+void montymain(args_t *arg)*/
+
+/* stringoperations */
+int count(char *str);
+char **tokenizer(char *str);
 
 /* getfunctions */
 void (*getfunc(char **str))(stack_t **stack, unsigned int line_number);

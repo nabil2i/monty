@@ -9,11 +9,11 @@
  */
 void (*getfunc(char **str))(stack_t **stack, unsigned int line_number)
 {
-	instruction_t functions[] = {{
+	instruction_t functions[] = {
 	{"push", monty_push},
 	{"pall", monty_pall},
 	{NULL, NULL}
-	}
+	};
 
 	int opcodes, i;
 
