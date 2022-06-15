@@ -75,5 +75,6 @@ void monty_pall(stack_t **stack, unsigned int line_number);
 
 /* listoperations */
 size_t print_list(const stack_t *head);
+stack_t *add_node_top(stack_t **top, int number);
 
 #endif

@@ -23,3 +23,27 @@ size_t print_list(const stack_t *head)
 	}
 	return (num_nodes);
 }
+
+/**
+ * add_node_top - adds a note on top of a stack
+ * @top: pointer to top of the stack
+ * @n: data to add
+ *
+ * Return: Nothing
+ */
+stack_t *add_node_top(stack_t **top, int number)
+{
+	stack_t *new;
+	new = malloc(sizeof(stack_t));
+	if (!new)
+	{
+		return (NULL);
+	}
+
+	new->n = number;
+
+	new->next = *top;
+	new->prev = NULL;
+
+	return (new);
+}
