@@ -9,4 +9,13 @@ void monty_push(stack_t **stack, unsigned_int line_num)
 	stack_t *new;
 
 	new = malloc(sizeof(stack_t));
-	new->
+	if (!new)
+	{
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		exit (EXIT_FAILURE);
+	}
+
+	new->n = ;
+	new->prev = top;
+	new->next = NULL;
+}
