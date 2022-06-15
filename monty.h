@@ -46,4 +46,11 @@ typedef struct args_s
 	int line_number;
 } args_t;
 
+extern char *line = NULL;
+extern stack_t **montystack = NULL;
+extern FILE *fptr = NULL;
+extern **tokens = NULL;
+
+/* monty.c */
+void montymain(args_t *arg)
 #endif
