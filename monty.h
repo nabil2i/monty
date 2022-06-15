@@ -12,9 +12,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -27,8 +27,23 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * struct args_s - main arguments
+ * @argc: arguments count
+ * @bcfile: name of the monty byte code file
+ * @line_number: current line number in the file
+ *
+ * Description: restructuring the arguments passed to main
+ */
+typedef struct args_s
+{
+	int argc;
+	char *bcfile;
+	int line_number;
+} args_t;
 
 #endif
