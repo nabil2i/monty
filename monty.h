@@ -40,19 +40,28 @@ typedef struct instruction_s
  * Description: restructuring the arguments passed to main
  */
 
-/*typedef struct args_s
+/*
+typedef struct args_s
 {
 	int argc;
 	char *bcfile;
 	int line_number;
-} args_t;*/
+} args_t;
+*/
 
-extern char *line;
+extern char *lineptr;
 extern stack_t **montystack;
 extern FILE *fptr;
 extern **tokens;
 
 /* monty.c */
 void montymain(args_t *arg)
+
+/* getfunctions */
+void (*getfunc(char **str))(stack_t **stack, unsigned int line_number);
+
+/* opcode functions */
+void monty_push(stack_t **stack, unsigned int line_number);
+
 
 #endif
