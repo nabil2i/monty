@@ -19,3 +19,23 @@ void monty_push(stack_t **stack, unsigned_int line_num)
 	new->prev = top;
 	new->next = NULL;
 }
+
+/**
+ * pall - prints all the values on the stack
+ *	starting from the top
+ * @stack: double pointer to the stack
+ * @line_number - current line
+ *
+ * Return: Nothing
+ */
+void monty_pall(stack_t **stack, unsigned int line_number)
+{
+	if (*stack != NULL)
+	{
+		print_list(*stack);
+	}
+	else
+	{
+		;
+	}
+}
