@@ -17,7 +17,7 @@ void (*getfunc(char **str))(stack_t **stack, unsigned int line_number)
 
 	int opcodes, i;
 
-	opcodes = 1;
+	opcodes = 2;
 	i = 0;
 	while (i < opcodes)
 	{
