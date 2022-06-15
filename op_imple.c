@@ -6,7 +6,7 @@
  */
 void monty_push(stack_t **stack, unsigned_int line_num)
 {
-	stack_t *new;
+	stack_t *new, *temp;
 
 	new = malloc(sizeof(stack_t));
 	if (!new)
@@ -15,7 +15,9 @@ void monty_push(stack_t **stack, unsigned_int line_num)
 		exit (EXIT_FAILURE);
 	}
 
-	new->n = ;
-	new->prev = top;
+	temp = *stack
+	new->n = tokens[1];
+	new->prev = temp;
 	new->next = NULL;
+	temp->next = new;
 }
