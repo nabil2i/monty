@@ -54,6 +54,7 @@ int main(int argc, char *argv[])
 		{
 			break;
 		}
+		tokens = tokenizer(&lineptr);
 		if (!tokens[0])
 		{
 			continue;
