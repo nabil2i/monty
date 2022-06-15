@@ -1,6 +1,13 @@
 #include "monty.h"
 #include <stdio.h>
 
+/* Initialisation of global variables */
+char *line = NULL;
+stack_t **montystack = NULL;
+FILE *fptr = NULL;
+char **tokens = NULL;
+
+
 /**
  * main - entry point of the monty interpreter
  * @argc: arguments counts
