@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * monty_stack - lorem
+ * monty_stack - monty stack
  * @stack: double pointer to the stack
  * @line_number: current line
  *i
