@@ -92,8 +92,34 @@ void monty_sub(stack_t **stack, unsigned int line_number)
  */
 void monty_div(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	size_t nodes;
+	int div = 0;
+	stack_t *new;
+
+	nodes = count_nodes(stack);
+	if (nodes < 2)
+	{
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", linenumber);
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
+	div = (*stack)->next->n / (*stack)->n;
+	remove_top(stack);
+	remove_top(stack);
+
+	new = add_node_top(stack, sub);
+	if (!new)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
 }
 
 /**
