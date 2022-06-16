@@ -106,3 +106,41 @@ int remove_top(stack_t **h)
 	free(temp);
 	return (num);
 }
+
+/**
+ * add_node_queue - adds a node at the queue
+ * @h: list
+ * @number: data to add
+ * Return: address of the added node
+ */
+stack_t *add_node_queue(stack_t **h, int number)
+{
+	stack_t *new, *last;
+
+	last = *h;
+	if (!h)
+	{
+		return (NULL);
+
+	}
+	new = malloc(sizeof(stack_t));
+	if (!new)
+		return (NULL);
+	new->n = number;
+	new->next = NULL;
+
+	if (*h == NULL)
+	{
+		new->prev = NULL;
+		*h = new;
+		return (new);
+	}
+	while (last->next)
+	{
+		last = last->next;
+	}
+	last->next = new;
+	new->prev = last;
+	return (new);
+
+}
