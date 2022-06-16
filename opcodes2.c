@@ -83,7 +83,7 @@ void monty_sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_div - lorem
+ * monty_div - divide second top element by top element of srack
  * @stack: double pointer to the stack
  * @line_number: current line
  *
