@@ -87,7 +87,7 @@ void monty_sub(stack_t **stack, unsigned int line_number)
  * @stack: double pointer to the stack
  * @line_number: current line
  *
- * Description: lorem
+ * Description: implement div opcode
  * Return: Nothing
  */
 void monty_div(stack_t **stack, unsigned int line_number)
