@@ -68,7 +68,7 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_pstr - lorem
+ * monty_pstr - prints the string starting at the top
  * @stack: double pointer to the stack
  * @line_number: current line
  *
@@ -76,8 +76,21 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
  */
 void monty_pstr(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
+	stack_t *temp;
 	(void)line_number;
+
+	temp = (*stack);
+	if (temp == NULL)
+	{
+		printf("\n");
+		return;
+	}
+	while (temp && node->n != 0 && temp->n >= 0 && temp->n <= 127)
+	{
+		putchar(node->n);
+		temp = temp->next;
+	}
+	putchar('\n');
 }
 
 /**
