@@ -59,7 +59,7 @@ void monty_pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_pint - print vales at the top of stack
+ * monty_pint - print values at the top of stack
  * @stack: double pointer to the stack
  * @line_number: current line
  *
@@ -67,19 +67,28 @@ void monty_pall(stack_t **stack, unsigned int line_number)
  */
 void monty_pint(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
 
+<<<<<<< HEAD
 	if ((*stack)->next == NULL)
 	{
 		fprintf(stderr, "L %d:  can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->next->n);
+=======
+	if ((*stack) == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", (*stack)->n);
+>>>>>>> 6103560335bbc412b617e58dde0d94962bf24e5e
 }
 
 /**
- * monty_pop - lorem
+ * monty_pop - removes the top element
  * @stack: double pointer to the stack
  * @line_number: current line
  *
@@ -87,9 +96,18 @@ void monty_pint(stack_t **stack, unsigned int line_number)
  */
 void monty_pop(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	stack_t *temp;
 
+	if ((*stack) == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		free_everything();
+		exit(EXIT_FAILURE);
+        }
+
+	temp = (*stack)->next;
+	*stack = NULL;
+	*stack = temp;
 }
 
 /**
