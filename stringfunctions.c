@@ -34,21 +34,14 @@ int count(char *str)
 char **tokenizer(char *str)
 {
 	char **tokens, *temp_token;
-	int i, num_tokens, len, num_characters, first_character, end_character, j;
+	int i, num_tokens, len, num_characters = 0, first_character, end_character, j;
 
-	num_characters = 0;
-	first_character = 0;
-	end_character = 0;
 	j = 0;
 	len = strlen(str);
 	num_tokens = count(str);
 	if (num_tokens <= 0)
-	{
 		return (NULL);
-	}
-
 	tokens = (char **)malloc(sizeof(char *) * (num_tokens + 1));
-
 	for (i = 0; i <= len; i++)
 	{
 		if (str[i] == ' ' || str[i] == '\0' || str[i] == '\n')
@@ -70,19 +63,14 @@ char **tokenizer(char *str)
 				j++;
 				num_characters = 0;
 			}
-
 		}
 		else
 		{
 			if (num_characters == 0)
-			{
 				first_character = i;
-			}
 			num_characters++;
 		}
-
 	}
-
 	tokens[j] = NULL;
 	return (tokens);
 }
