@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * monty_add - lorem
+ * monty_add - add top two elements of stack
  * @stack: double pointer to the stack
  * @line_number: current line
  *
