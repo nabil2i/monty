@@ -35,7 +35,7 @@ void monty_add(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_nop - lorem
+ * monty_nop - do nothing
  * @stack: double pointer to the stack
  * @line_number: current line
  *
