@@ -123,7 +123,7 @@ void monty_div(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_mul - lorem
+ * monty_mul - multiply second top element with top element of stack
  * @stack: double pointer to the stack
  * @line_number: current line
  *
