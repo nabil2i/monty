@@ -79,6 +79,9 @@ size_t count_nodes(stack_t **h);
 int remove_top(stack_t **h);
 stack_t *add_node_queue(stack_t **h, int number);
 
+/* listoperations */
+int remove_queue(stack_t **h);
+
 /* opcodes2 */
 void monty_add(stack_t **stack, unsigned int line_number);
 void monty_nop(stack_t **stack, unsigned int line_number);

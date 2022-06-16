@@ -117,7 +117,7 @@ void monty_rotl(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_rotr - lorem
+ * monty_rotr - rotates the stack to the bottom
  * @stack: double pointer to the stack
  * @line_number: current line
  *
@@ -125,6 +125,14 @@ void monty_rotl(stack_t **stack, unsigned int line_number)
  */
 void monty_rotr(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
+	int num = 0;
+
 	(void)line_number;
+
+	if (*stack == NULL)
+	{
+		return;
+	}
+	num = remove_queue(stack);
+	add_node_top(stack, num);
 }
