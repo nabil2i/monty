@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
  * monty_push - handles opcode push
- * @stack: double pointer to stack to push to
- * @line_num: line number of the opcode in the file
+ * @top: double pointer to stack to push to
+ * @line_number: line number of the opcode in the file
  */
 void monty_push(stack_t **top, unsigned int line_number)
 {
@@ -39,15 +39,15 @@ void monty_push(stack_t **top, unsigned int line_number)
 		free_lineptr_tokens();
 		free_montystack();
 		free_fptr();
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 }
 
 /**
- * pall - prints all the values on the stack
+ * monty_pall - prints all the values on the stack
  *	starting from the top
  * @stack: double pointer to the stack
- * @line_number - current line
+ * @line_number: current line
  *
  * Return: Nothing
  */
@@ -65,9 +65,9 @@ void monty_pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_pint -
+ * monty_pint - lorem
  * @stack: double pointer to the stack
- * @line_number - current line
+ * @line_number: current line
  *
  * Return: Nothing
  */
@@ -78,9 +78,9 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_pop -
+ * monty_pop - lorem
  * @stack: double pointer to the stack
- * @line_number - current line
+ * @line_number: current line
  *
  * Return: Nothing
  */
@@ -92,9 +92,9 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_swap -
+ * monty_swap - lorem
  * @stack: double pointer to the stack
- * @line_number - current line
+ * @line_number: current line
  *
  * Return: Nothing
  */

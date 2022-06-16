@@ -10,7 +10,7 @@ int count(char *str)
 {
 	int i = 0, flag = 0, ntokens = 0;
 
-	for (i = 0; str[i]!= '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
 		{
