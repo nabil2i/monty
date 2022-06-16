@@ -102,13 +102,11 @@ void monty_pstr(stack_t **stack, unsigned int line_number)
  */
 void monty_rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
 	int num = 0;
 
 	(void)line_number;
-	temp = *stack;
 
-	if (temp == NULL)
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		return;
 	}
@@ -129,7 +127,7 @@ void monty_rotr(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 
-	if (*stack == NULL)
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		return;
 	}
