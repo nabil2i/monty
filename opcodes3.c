@@ -48,7 +48,7 @@ void monty_mod(stack_t **stack, unsigned int line_number)
  */
 void monty_pchar(stack_t **stack, unsigned int line_number)
 {
-	stack *temp;
+	stack_t *temp;
 
 	temp = *stack;
 	if (!temp)
@@ -87,7 +87,7 @@ void monty_pstr(stack_t **stack, unsigned int line_number)
 	}
 	while (temp && temp->n != 0 && temp->n >= 0 && temp->n <= 127)
 	{
-		putchar(node->n);
+		putchar(temp->n);
 		temp = temp->next;
 	}
 	putchar('\n');
