@@ -39,7 +39,7 @@ void monty_add(stack_t **stack, unsigned int line_number)
  * @stack: double pointer to the stack
  * @line_number: current line
  *
- * Description: lorem
+ * Description: implement nop opcode
  * Return: Nothing
  */
 void monty_nop(stack_t **stack, unsigned int line_number)
