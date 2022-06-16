@@ -64,10 +64,10 @@ stack_t *add_node_top(stack_t **top, int number)
  *
  * Return: number of nodes
  */
-int count_nodes(stack_t **h)
+size_t count_nodes(stack_t **h)
 {
 	stack_t *temp;
-	int num_nodes;
+	size_t num_nodes;
 
 	num_nodes = 0;
 	temp = (*h);

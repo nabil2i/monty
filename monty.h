@@ -65,7 +65,7 @@ char **tokenizer(char *str);
 /* getfunctions */
 void (*getfunc(char **str))(stack_t **stack, unsigned int line_number);
 
-/* opcode functions */
+/* opcodes1 */
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
 void monty_pint(stack_t **stack, unsigned int line_number);
@@ -75,7 +75,7 @@ void monty_swap(stack_t **stack, unsigned int line_number);
 /* listoperations */
 size_t print_list(const stack_t *head);
 stack_t *add_node_top(stack_t **top, int number);
-int count_nodes(stack_t **h);
+size_t count_nodes(stack_t **h);
 
 /* opcodes2 */
 void monty_add(stack_t **stack, unsigned int line_number);
