@@ -137,7 +137,7 @@ void monty_rotr(stack_t **stack, unsigned int line_number)
 	{
 		return;
 	}
-	temp = get_node(stack, nodes - 1);
+	temp = get_node(temp, nodes - 1);
 	num = temp->n;
 	remove_queue(stack);
 	add_node_top(stack, num);
