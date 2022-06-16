@@ -26,17 +26,12 @@ void monty_push(stack_t **top, unsigned int line_number)
 	}
 
 	number = atoi(tokens[1]);
-
-	new = malloc(sizeof(stack_t));
-	if (!new)
+	new = add_node_top(top, number);
+	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit (EXIT_FAILURE);
 	}
-
-	new->n = number;
-	new->next = *top;
-	new->prev = NULL;
 }
 
 /**
