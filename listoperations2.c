@@ -36,7 +36,7 @@ int remove_queue(stack_t **h)
 }
 
 /**
- * remode_at_index - removes a node at index idx
+ * remove_at_index - removes a node at index idx
  * @idx: index
  * @h: list
  *
@@ -94,7 +94,7 @@ stack_t *get_node(stack_t *h, unsigned int idx)
 		h = h->next;
 		i++;
 	}
-	
+
 	if (h)
 		return (h);
 	else
