@@ -48,12 +48,11 @@ stack_t *add_node_top(stack_t **top, int number)
 
 	new->n = number;
 	new->next = (*top);
-	new->prev = NULL;
-
 	if (*top)
 	{
 		(*top)->prev = new;
 	}
+	new->prev = NULL;
 	(*top) = new;
 
 	return (new);
