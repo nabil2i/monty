@@ -59,7 +59,7 @@ void monty_pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_pint - print vales at the top of stack
+ * monty_pint - print values at the top of stack
  * @stack: double pointer to the stack
  * @line_number: current line
  *
@@ -79,7 +79,7 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_pop - lorem
+ * monty_pop - removes the top element
  * @stack: double pointer to the stack
  * @line_number: current line
  *
@@ -87,9 +87,18 @@ void monty_pint(stack_t **stack, unsigned int line_number)
  */
 void monty_pop(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	stack_t *temp;
 
+	if ((*stack) == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		free_everything();
+		exit(EXIT_FAILURE);
+        }
+
+	temp = *stack;
+	*stack = NULL;
+	*stack = temp;
 }
 
 /**
