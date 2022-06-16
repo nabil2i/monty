@@ -5,7 +5,7 @@
  * @stack: double pointer to the stack
  * @line_number: current line
  *
- * Description: lorem
+ * Description: implement add opcode
  * Return: Nothing
  */
 void monty_add(stack_t **stack, unsigned int line_number)
