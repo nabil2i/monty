@@ -60,7 +60,8 @@ int main(int argc, char *argv[])
 		func = getfunc(monty_g.tokens);
 		if (func == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, monty_g.tokens[0]);
+			fprintf(stderr, "L%d: unknown ", line_number);
+			fprintf(stderr, "instruction %s\n", monty_g.tokens[0]);
 			free_lineptr_tokens();
 			free_montystack();
 			free_fptr();
