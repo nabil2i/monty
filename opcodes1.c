@@ -100,7 +100,7 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_swap - lorem
+ * monty_swap - swap top two elements in stack
  * @stack: double pointer to the stack
  * @line_number: current line
  *
