@@ -53,13 +53,13 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 	temp = *stack;
 	if (!temp)
 	{
-		dprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		printf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 		free_everything();
 		exit(EXIT_FAILURE);
 	}
 	if (temp->n < 0 || temp->n > 127)
 	{
-		dprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		printf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 		free_everything();
 		exit(EXIT_FAILURE);
 	}
