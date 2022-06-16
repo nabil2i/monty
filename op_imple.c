@@ -54,3 +54,43 @@ void monty_pall(stack_t **stack, unsigned int line_number)
 		;
 	}
 }
+
+/**
+ * monty_pint -
+ * @stack: double pointer to the stack
+ * @line_number - current line
+ *
+ * Return: Nothing
+ */
+void monty_pint(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
+
+/**
+ * monty_pop -
+ * @stack: double pointer to the stack
+ * @line_number - current line
+ *
+ * Return: Nothing
+ */
+void monty_pop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+
+}
+
+/**
+ * monty_swap -
+ * @stack: double pointer to the stack
+ * @line_number - current line
+ *
+ * Return: Nothing
+ */
+void monty_swap(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
