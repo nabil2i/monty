@@ -14,7 +14,7 @@ void monty_stack(stack_t **stack, unsigned int line_number)
 	monty_g.sq_mode = 1;
 }
 /**
- * monty_queue - lorem
+ * monty_queue - monty queue
  * @stack: double pointer to the stack
  * @line_number: current line
  *
