@@ -76,6 +76,7 @@ void monty_swap(stack_t **stack, unsigned int line_number);
 size_t print_list(const stack_t *head);
 stack_t *add_node_top(stack_t **top, int number);
 size_t count_nodes(stack_t **h);
+void remove_top(stack_t **h);
 
 /* opcodes2 */
 void monty_add(stack_t **stack, unsigned int line_number);

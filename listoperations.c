@@ -84,3 +84,22 @@ size_t count_nodes(stack_t **h)
 
 	return (num_nodes);
 }
+/**
+ * remove_top - deletes the top element
+ * @h: list
+ *
+ * Return: data deleted
+ */
+void remove_top(stack_t **h)
+{
+	stack_t *temp;
+
+	temp = (*h);
+	(*h) = (*h)->next;
+	if (temp->next != NULL)
+	{
+		temp->next->prev = NULL;
+	}
+	temp->next = NULL;
+	free(temp);
+}
