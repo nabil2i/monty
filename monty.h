@@ -51,6 +51,7 @@ typedef struct monty_global_s
 	stack_t *montystack;
 	FILE *fptr;
 	char **tokens;
+	unsigned int sq_mode;
 } global_t;
 
 extern global_t monty_g;

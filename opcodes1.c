@@ -28,7 +28,10 @@ void monty_push(stack_t **top, unsigned int line_number)
 	}
 
 	number = atoi(monty_g.tokens[1]);
-	new = add_node_top(top, number);
+	if (monty_g.sq_mode == 1)
+		new = add_node_top(top, number);
+	else if (monty_g.sq_mode == 0)
+		new = add_node_queue(top, number);
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
