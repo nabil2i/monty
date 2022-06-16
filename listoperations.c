@@ -90,11 +90,13 @@ size_t count_nodes(stack_t **h)
  *
  * Return: data deleted
  */
-void remove_top(stack_t **h)
+int remove_top(stack_t **h)
 {
 	stack_t *temp;
+	int num = 0;
 
 	temp = (*h);
+	num = temp->n;
 	(*h) = (*h)->next;
 	if (temp->next != NULL)
 	{
@@ -102,4 +104,5 @@ void remove_top(stack_t **h)
 	}
 	temp->next = NULL;
 	free(temp);
+	return (num);
 }
