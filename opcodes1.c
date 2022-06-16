@@ -114,7 +114,7 @@ void monty_pop(stack_t **stack, unsigned int line_number)
  */
 void monty_swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
+	stack_t *temp, *temp1;
 	size_t nodes;
 
 	nodes = count_nodes(stack);
@@ -124,6 +124,15 @@ void monty_swap(stack_t **stack, unsigned int line_number)
 		free_everything();
 		exit(EXIT_FAILURE);
 	}
-
-	
+	temp = (*stack)->next->next;
+	temp1 = (*stack)->next;
+	(*stack)->next->next = (*stack);
+	(*stack)->next->prev = (*stack)->prev;
+	if (temp)
+	{
+		temp->prev = temp1->next;
+	}
+	temp1->next->prev = temp1;
+	temp1->next->next = temp;
+	(*stack) = temp1;
 }
