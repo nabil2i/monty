@@ -67,11 +67,15 @@ void monty_pall(stack_t **stack, unsigned int line_number)
  */
 void monty_pint(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
 
-	if ((*stack)->next == NULL)
-		print_list(*stack);
+	if (!stack)
+	{
+		fprintf(stderr, "L:%u can't pint, stack empty\n", line_number);
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", (*stack)->n);
 }
 
 /**
