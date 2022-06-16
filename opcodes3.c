@@ -126,15 +126,19 @@ void monty_rotl(stack_t **stack, unsigned int line_number)
 void monty_rotr(stack_t **stack, unsigned int line_number)
 {
 	int num = 0;
+	size_t nodes = 0;
 	stack_t *temp;
 
 	temp = *stack;
+	nodes = count_nodes(stack);
 	(void)line_number;
 
 	if (temp == NULL)
 	{
 		return;
 	}
-	num = remove_queue(stack);
+	temp = get_node(stack, nodes - 1);
+	num = temp->n;
+	remove_queue(stack);
 	add_node_top(stack, num);
 }
