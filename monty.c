@@ -2,7 +2,7 @@
 #include "monty.h"
 
 /* Initialisation of global variables */
-global_t monty_g = {NULL, NULL, NULL, NULL, 1};
+global_t monty_g = {NULL, NULL, NULL, NULL, 0};
 
 /**
  * main - entry point of the monty interpreter
