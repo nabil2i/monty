@@ -13,7 +13,7 @@ int remove_queue(stack_t **h)
 	int num = 0;
 
 	last = *h;
-	if (h == NULL)
+	if (*h == NULL)
 	{
 		return (0);
 	}
