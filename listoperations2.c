@@ -13,17 +13,24 @@ int remove_queue(stack_t **h)
 	int num = 0;
 
 	last = *h;
-	secondlast = *h;
-
+	if (h == NULL)
+	{
+		return (0);
+	}
+	if ((*h)->next == NULL)
+	{
+		num = (*h)->n;
+		*h = NULL;
+		free(h);
+		return (num);
+	}
 	while (last->next)
 	{
-		secondlast = last;
 		last = last->next;
 	}
 
 	num = last->n;
-	secondlast->next = NULL;
-	last->prev = NULL;
+	last->prev->next = NULL;
 	free(last);
 	return (num);
 }
