@@ -30,7 +30,7 @@ void monty_mod(stack_t **stack, unsigned int line_number)
 	remove_top(stack);
 	remove_top(stack);
 
-	new = add_node_top(stack, mul);
+	new = add_node_top(stack, mod);
 	if (!new)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
