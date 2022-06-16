@@ -49,7 +49,7 @@ void monty_nop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_sub - lorem
+ * monty_sub - subtract top element from second element in the stack
  * @stack: double pointer to the stack
  * @line_number: current line
  *
