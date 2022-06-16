@@ -36,6 +36,45 @@ int remove_queue(stack_t **h)
 }
 
 /**
+ * remode_at_index - removes a node at index idx
+ * @idx: index
+ * @h: list
+ *
+ * Return: 1 if success and 0 if failure
+ */
+int remove_at_index(stack_t **h, unsigned int idx)
+{
+	stack_t *temp = *h;
+	unsigned int i = 0;
+
+	if (!idx)
+	{
+		(*h) = temp->next;
+		if (temp->next)
+			temp->next->prev = NULL;
+		temp->next = NULL;
+		free(temp);
+		return (1);
+	}
+
+	while (i < idx)
+	{
+		temp = temp->next;
+		i++;
+		if (!temp)
+			return (0);
+	}
+
+	temp->prev->next = temp->next;
+	if (temp->next)
+		temp->next->prev = temp->prev;
+	free(temp);
+
+	return (1);
+
+}
+
+/**
  * get_node - get the node at the index
  * @h: list
  * @idx: index

@@ -82,6 +82,7 @@ stack_t *add_node_queue(stack_t **h, int number);
 /* listoperations2 */
 int remove_queue(stack_t **h);
 stack_t *get_node(stack_t *h, unsigned int idx);
+int remove_at_index(stack_t **h, unsigned int idx);
 
 /* opcodes2 */
 void monty_add(stack_t **stack, unsigned int line_number);
