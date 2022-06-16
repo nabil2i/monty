@@ -126,10 +126,12 @@ void monty_rotl(stack_t **stack, unsigned int line_number)
 void monty_rotr(stack_t **stack, unsigned int line_number)
 {
 	int num = 0;
+	stack_t *temp;
 
+	temp = *stack;
 	(void)line_number;
 
-	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
+	if (temp == NULL)
 	{
 		return;
 	}
