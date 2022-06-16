@@ -57,3 +57,30 @@ stack_t *add_node_top(stack_t **top, int number)
 
 	return (new);
 }
+
+/**
+ * count_nodes - counts the nodes in the list
+ * @h: list
+ *
+ * Return: number of nodes
+ */
+int count_nodes(stack_t **h)
+{
+	stack_t *temp;
+	int num_nodes;
+
+	num_nodes = 0;
+	temp = (*h);
+	if (!temp)
+	{
+		return (0);
+	}
+
+	while (temp)
+	{
+		num_nodes++;
+		temp = temp->next;
+	}
+
+	return (num_nodes);
+}
