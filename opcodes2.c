@@ -58,8 +58,28 @@ void monty_nop(stack_t **stack, unsigned int line_number)
  */
 void monty_sub(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	size_t nodes;
+	int sub = 0;
+	stack_t *new;
+
+	nodes = count_nodes(stack);
+	if (nodes < 2)
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
+	sub = (*stack)->next->n - (*stack)->n;
+	remove_top(stack);
+	remove_top(stack);
+
+	new = add_node_top(stack, sub);
+	if (!new)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
 }
 
 /**
