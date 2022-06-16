@@ -127,7 +127,7 @@ void monty_div(stack_t **stack, unsigned int line_number)
  * @stack: double pointer to the stack
  * @line_number: current line
  *
- * Description: lorem
+ * Description: implement mul opcode
  * Return: Nothing
  */
 void monty_mul(stack_t **stack, unsigned int line_number)
