@@ -118,7 +118,7 @@ void monty_swap(stack_t **stack, unsigned int line_number)
 	int nodes;
 
 	nodes = count_nodes(stack);
-	if(nodes < 2)
+	if (nodes < 2)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
 		free_everything();
