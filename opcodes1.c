@@ -96,7 +96,7 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
         }
 
-	temp = *stack;
+	temp = (*stack)->next;
 	*stack = NULL;
 	*stack = temp;
 }
