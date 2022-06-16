@@ -55,6 +55,8 @@ typedef struct monty_global_s
 
 extern global_t monty_g;
 
+/* Macros */
+#define UNKNOWN_INST "L%d: unknown instruction %s\n"
 
 /* stringoperations */
 int count(char *str);
@@ -99,4 +101,6 @@ void free_fptr(void);
 void free_arrays(char **ar_str);
 void free_list(stack_t *h);
 
+/* freefunctions2 */
+void free_everything(void);
 #endif
