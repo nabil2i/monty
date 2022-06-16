@@ -59,7 +59,7 @@ void monty_pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_pint - lorem
+ * monty_pint - print vales at the top of stack
  * @stack: double pointer to the stack
  * @line_number: current line
  *
@@ -69,6 +69,9 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
+
+	if ((*stack)->next == NULL)
+		print_list(*stack);
 }
 
 /**
