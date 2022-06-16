@@ -40,7 +40,7 @@ void monty_mod(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_pchar - lorem
+ * monty_pchar - prints the char at the top of the stack
  * @stack: double pointer to the stack
  * @line_number: current line
  *
@@ -48,8 +48,23 @@ void monty_mod(stack_t **stack, unsigned int line_number)
  */
 void monty_pchar(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	stack *temp;
+
+	temp = *stack;
+	if (!temp)
+	{
+		dprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
+	if (temp->n < 0 || temp->n > 127)
+	{
+		dprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
+	putchar(temp->n);
+	putchar('\n');
 }
 
 /**
