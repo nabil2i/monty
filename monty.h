@@ -37,30 +37,24 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct args_s - main arguments
- * @argc: arguments count
- * @bcfile: name of the monty byte code file
- * @line_number: current line number in the file
+ * struct monty_global_s - monty global variable
+ * @lineptr: pointer to a line of text
+ * @montystack: stack
+ * @fptr: file
+ * @tokens: arrays of strings
  *
- * Description: restructuring the arguments passed to main
+ * Description: structuring global variables
  */
-
-/*
-typedef struct args_s
+typedef struct monty_global_s
 {
-	int argc;
-	char *bcfile;
-	int line_number;
-} args_t;
-*/
+	char *lineptr;
+	stack_t *montystack;
+	FILE *fptr;
+	char **tokens;
+} global_t;
 
-extern char *lineptr;
-extern stack_t *montystack;
-extern FILE *fptr;
-extern char **tokens;
+extern global_t monty_g;
 
-/* monty.c
-void montymain(args_t *arg)*/
 
 /* stringoperations */
 int count(char *str);

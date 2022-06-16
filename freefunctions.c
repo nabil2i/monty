@@ -5,12 +5,12 @@
  */
 void free_lineptr_tokens(void)
 {
-	if (lineptr != NULL)
+	if (monty_g.lineptr != NULL)
 	{
-		free(lineptr);
-		lineptr = NULL;
-		free_arrays(tokens);
-		tokens = NULL;
+		free(monty_g.lineptr);
+		monty_g.lineptr = NULL;
+		free_arrays(monty_g.tokens);
+		monty_g.tokens = NULL;
 	}
 }
 
@@ -19,10 +19,10 @@ void free_lineptr_tokens(void)
  */
 void free_montystack(void)
 {
-	if (montystack)
+	if (monty_g.montystack)
 	{
-		free_list(montystack);
-		montystack = NULL;
+		free_list(monty_g.montystack);
+		monty_g.montystack = NULL;
 	}
 }
 
@@ -31,10 +31,10 @@ void free_montystack(void)
  */
 void free_fptr(void)
 {
-	if (fptr)
+	if (monty_g.fptr)
 	{
-		fclose(fptr);
-		fptr = NULL;
+		fclose(monty_g.fptr);
+		monty_g.fptr = NULL;
 	}
 }
 

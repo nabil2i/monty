@@ -10,7 +10,7 @@ void monty_push(stack_t **top, unsigned int line_number)
 	stack_t *new;
 	int i, number;
 
-	if (tokens[1] == NULL)
+	if (monty_g.tokens[1] == NULL)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		free_lineptr_tokens();
@@ -19,9 +19,9 @@ void monty_push(stack_t **top, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	for (i = 0; tokens[1][i] != '\0'; i++)
+	for (i = 0; monty_g.tokens[1][i] != '\0'; i++)
 	{
-		if (isalpha(tokens[1][i]) != 0)
+		if (isalpha(monty_g.tokens[1][i]) != 0)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			free_lineptr_tokens();
@@ -31,7 +31,7 @@ void monty_push(stack_t **top, unsigned int line_number)
 		}
 	}
 
-	number = atoi(tokens[1]);
+	number = atoi(monty_g.tokens[1]);
 	new = add_node_top(top, number);
 	if (new == NULL)
 	{

@@ -2,10 +2,7 @@
 #include "monty.h"
 
 /* Initialisation of global variables */
-char *lineptr = NULL;
-stack_t *montystack = NULL;
-FILE *fptr = NULL;
-char **tokens = NULL;
+global_t monty_g = {NULL, NULL, NULL, NULL};
 
 /**
  * main - entry point of the monty interpreter
@@ -35,8 +32,8 @@ int main(int argc, char *argv[])
 	/**
 	 * opening the monty bytecode file
 	 */
-	fptr = fopen(argv[1], "r");
-	if (!fptr)
+	monty_g.fptr = fopen(argv[1], "r");
+	if (!monty_g.fptr)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
@@ -46,30 +43,30 @@ int main(int argc, char *argv[])
 	 * loop until all lines are read and processed
 	 * or upon encounterig an error
 	 */
-	while(3>2)
+	while (5)
 	{
 		line_number++;
-		fromget = getline(&lineptr, &len, fptr);
+		fromget = getline(&monty_g.lineptr, &len, monty_g.fptr);
 		if (fromget < 0)
 		{
 			break;
 		}
-		tokens = tokenizer(lineptr);
-		if (!tokens[0] || tokens[0][0] == '#')
+		monty_g.tokens = tokenizer(monty_g.lineptr);
+		if (!monty_g.tokens[0] || monty_g.tokens[0][0] == '#')
 		{
 			free_lineptr_tokens();
 			continue;
 		}
-		func = getfunc(tokens);
+		func = getfunc(monty_g.tokens);
 		if (func == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, tokens[0]);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, monty_g.tokens[0]);
 			free_lineptr_tokens();
 			free_montystack();
 			free_fptr();
 			exit(EXIT_FAILURE);
 		}
-		func(&montystack, line_number);
+		func(&monty_g.montystack, line_number);
 		free_lineptr_tokens();
 	}
 	free_lineptr_tokens();
