@@ -55,17 +55,23 @@ int main(int argc, char *argv[])
 			break;
 		}
 		tokens = tokenizer(lineptr);
-		if (!tokens[0])
+		if (!tokens[0] || tokens[0][0] == '#')
 		{
+			free_lineptr_tokens();
 			continue;
 		}
 		func = getfunc(tokens);
 		if (func == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, tokens[0]);
+			free_lineptr_tokens();
+			free_montystack();
 			exit(EXIT_FAILURE);
 		}
 		func(&montystack, line_number);
+		free_lineptr_tokens();
 	}
+	free_lineptr_tokens();
+	free_montystack();
 	return (EXIT_SUCCESS);
 }

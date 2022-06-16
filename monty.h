@@ -98,4 +98,11 @@ void monty_rotr(stack_t **stack, unsigned int line_number);
 void monty_stack(stack_t **stack, unsigned int line_number);
 void monty_queue(stack_t **stack, unsigned int line_number);
 
+/* freefunctions */
+void free_lineptr_tokens(void);
+void free_montystack(void);
+void free_fptr(void);
+void free_arrays(char **ar_str);
+void free_list(stack_t *h);
+
 #endif

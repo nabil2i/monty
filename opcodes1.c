@@ -13,6 +13,8 @@ void monty_push(stack_t **top, unsigned int line_number)
 	if (tokens[1] == NULL)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		free_lineptr_tokens();
+		free_montystack();
 		exit(EXIT_FAILURE);
 	}
 
@@ -21,6 +23,8 @@ void monty_push(stack_t **top, unsigned int line_number)
 		if (isalpha(tokens[1][i]) != 0)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			free_lineptr_tokens();
+			free_montystack();
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -30,6 +34,8 @@ void monty_push(stack_t **top, unsigned int line_number)
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free_lineptr_tokens();
+		free_montystack();
 		exit (EXIT_FAILURE);
 	}
 }
