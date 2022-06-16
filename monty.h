@@ -42,6 +42,7 @@ typedef struct instruction_s
  * @montystack: stack
  * @fptr: file
  * @tokens: arrays of strings
+ * @sq_mode: 1 for stack mode and 0 for queue mode
  *
  * Description: structuring global variables
  */
