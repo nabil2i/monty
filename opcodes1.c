@@ -88,16 +88,21 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if ((*stack) == NULL)
+	temp = *stack;
+	if (temp == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		free_everything();
 		exit(EXIT_FAILURE);
 	}
 
-	temp = (*stack)->next;
-	*stack = NULL;
-	*stack = temp;
+	(*stack) = (*stack)->next;
+	if (temp->next != NULL)
+	{
+		temp->next->prev = NULL;
+	}
+	temp->next = NULL;
+	free(temp);
 }
 
 /**
