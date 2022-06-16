@@ -37,30 +37,26 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct args_s - main arguments
- * @argc: arguments count
- * @bcfile: name of the monty byte code file
- * @line_number: current line number in the file
+ * struct monty_global_s - monty global variable
+ * @lineptr: pointer to a line of text
+ * @montystack: stack
+ * @fptr: file
+ * @tokens: arrays of strings
  *
- * Description: restructuring the arguments passed to main
+ * Description: structuring global variables
  */
-
-/*
-typedef struct args_s
+typedef struct monty_global_s
 {
-	int argc;
-	char *bcfile;
-	int line_number;
-} args_t;
-*/
+	char *lineptr;
+	stack_t *montystack;
+	FILE *fptr;
+	char **tokens;
+} global_t;
 
-extern char *lineptr;
-extern stack_t *montystack;
-extern FILE *fptr;
-extern char **tokens;
+extern global_t monty_g;
 
-/* monty.c
-void montymain(args_t *arg)*/
+/* Macros */
+#define UNKNOWN_INST "L%d: unknown instruction %s\n"
 
 /* stringoperations */
 int count(char *str);
@@ -72,9 +68,39 @@ void (*getfunc(char **str))(stack_t **stack, unsigned int line_number);
 /* opcode functions */
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
+void monty_pint(stack_t **stack, unsigned int line_number);
+void monty_pop(stack_t **stack, unsigned int line_number);
+void monty_swap(stack_t **stack, unsigned int line_number);
 
 /* listoperations */
 size_t print_list(const stack_t *head);
 stack_t *add_node_top(stack_t **top, int number);
 
+/* opcodes2 */
+void monty_add(stack_t **stack, unsigned int line_number);
+void monty_nop(stack_t **stack, unsigned int line_number);
+void monty_sub(stack_t **stack, unsigned int line_number);
+void monty_div(stack_t **stack, unsigned int line_number);
+void monty_mul(stack_t **stack, unsigned int line_number);
+
+/* opcodes3 */
+void monty_mod(stack_t **stack, unsigned int line_number);
+void monty_pchar(stack_t **stack, unsigned int line_number);
+void monty_pstr(stack_t **stack, unsigned int line_number);
+void monty_rotl(stack_t **stack, unsigned int line_number);
+void monty_rotr(stack_t **stack, unsigned int line_number);
+
+/* opcodes4 */
+void monty_stack(stack_t **stack, unsigned int line_number);
+void monty_queue(stack_t **stack, unsigned int line_number);
+
+/* freefunctions */
+void free_lineptr_tokens(void);
+void free_montystack(void);
+void free_fptr(void);
+void free_arrays(char **ar_str);
+void free_list(stack_t *h);
+
+/* freefunctions2 */
+void free_everything(void);
 #endif
