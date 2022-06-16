@@ -66,6 +66,7 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, tokens[0]);
 			free_lineptr_tokens();
 			free_montystack();
+			free_fptr();
 			exit(EXIT_FAILURE);
 		}
 		func(&montystack, line_number);
@@ -73,5 +74,6 @@ int main(int argc, char *argv[])
 	}
 	free_lineptr_tokens();
 	free_montystack();
+	free_fptr();
 	return (EXIT_SUCCESS);
 }
