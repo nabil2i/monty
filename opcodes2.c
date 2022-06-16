@@ -53,7 +53,7 @@ void monty_nop(stack_t **stack, unsigned int line_number)
  * @stack: double pointer to the stack
  * @line_number: current line
  *
- * Description: iumplement sub opcode
+ * Description: implement sub opcode
  * Return: Nothing
  */
 void monty_sub(stack_t **stack, unsigned int line_number)
