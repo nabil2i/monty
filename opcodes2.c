@@ -105,7 +105,7 @@ void monty_div(stack_t **stack, unsigned int line_number)
 	}
 	if ((*stack)->n == 0)
 	{
-		fprintf(stderr, "L%u: division by zero\n", linenumber);
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 		free_everything();
 		exit(EXIT_FAILURE);
 	}
@@ -113,7 +113,7 @@ void monty_div(stack_t **stack, unsigned int line_number)
 	remove_top(stack);
 	remove_top(stack);
 
-	new = add_node_top(stack, sub);
+	new = add_node_top(stack, div);
 	if (!new)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -132,6 +132,26 @@ void monty_div(stack_t **stack, unsigned int line_number)
  */
 void monty_mul(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	size_t nodes;
+	int mul = 0;
+	stack_t *new;
+
+	nodes = count_nodes(stack);
+	if (nodes < 2)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
+	mul = (*stack)->next->n * (*stack)->n;
+	remove_top(stack);
+	remove_top(stack);
+
+	new = add_node_top(stack, mul);
+	if (!new)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free_everything();
+		exit(EXIT_FAILURE);
+	}
 }
